@@ -1,14 +1,6 @@
 // @flow
 
-const UserCard = ({
-  userId,
-  image,
-  prefix,
-  name,
-  lastName,
-  userTitle,
-  user,
-}) => {
+const UserCard = ({ user, imageUrl, prefix, name, lastName, title }) => {
   return (
     user && (
       <div className="sm:w-1/2 md:w-1/2 lg:w-1/4 xl:w-1/4 ">
@@ -16,7 +8,7 @@ const UserCard = ({
           <div className="w-full overflow-hidden ">
             <img
               className="user-image  overflow-hidden w-full"
-              src={image}
+              src={imageUrl}
               alt="user avatar"
             />
           </div>
@@ -26,7 +18,7 @@ const UserCard = ({
             </p>
           </div>
           <div className="title-wrap px-4 py-1">
-            <p className="user-title font-light text-2xl">{userTitle}</p>
+            <p className="user-title font-light text-2xl">{title}</p>
           </div>
         </div>
       </div>
