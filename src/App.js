@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import UserCard from "./components/UserCard";
+
+import UserList from "./components/UserList";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <UserCard user={users[0]} />
+      <UserList users={users} />
     </div>
   );
 }
