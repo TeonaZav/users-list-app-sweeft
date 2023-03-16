@@ -1,35 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import UserList from "../components/UserList";
-
+import { useUsersList } from "../hooks/useUsersList";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function Home() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(100);
-  const [loading, setLoading] = useState(false);
-  const [users, setUsers] = useState([]);
-
-  const fetchUsers = async () => {
-    let url = `${BASE_URL}/${currentPage}/${pageSize}`;
-    setLoading(true);
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      setUsers(data.list);
-      console.log(data);
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-    }
-  };
+  const [usersState, fetchUsers] = useUsersList({ baseUrl: BASE_URL });
 
   useEffect(() => {
     fetchUsers();
-  }, []);
+  }, [fetchUsers]);
 
   return (
     <div className="App">
-      <UserList users={users} />
+      <UserList users={usersState.users} />
     </div>
   );
 }
