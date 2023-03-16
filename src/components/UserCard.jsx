@@ -1,6 +1,6 @@
 // @flow
 
-const UserCard = ({ user, imageUrl, prefix, name, lastName, title }) => {
+const UserCard = ({ user, id, imageUrl, prefix, name, lastName, title }) => {
   return (
     user && (
       <div className="sm:w-1/2 md:w-1/2 lg:w-1/4 xl:w-1/4 ">
@@ -8,7 +8,7 @@ const UserCard = ({ user, imageUrl, prefix, name, lastName, title }) => {
           <div className="w-full overflow-hidden ">
             <img
               className="user-image  overflow-hidden w-full"
-              src={imageUrl}
+              src={`${imageUrl}?v=${id}`}
               alt="user avatar"
             />
           </div>
