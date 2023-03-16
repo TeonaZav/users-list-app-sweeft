@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import UserCard from "./components/UserCard";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function App() {
@@ -22,7 +23,11 @@ function App() {
   useEffect(() => {
     fetchUsers();
   }, []);
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <UserCard user={users[0]} />
+    </div>
+  );
 }
 
 export default App;
