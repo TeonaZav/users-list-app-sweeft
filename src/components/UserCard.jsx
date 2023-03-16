@@ -1,9 +1,11 @@
-// @flow
-
+import { NavLink } from "react-router-dom";
 const UserCard = ({ user, id, imageUrl, prefix, name, lastName, title }) => {
   return (
     user && (
-      <div className="sm:w-1/2 md:w-1/2 lg:w-1/4 xl:w-1/4 ">
+      <NavLink
+        to={`/profile/${id}`}
+        className="sm:w-1/2 md:w-1/2 lg:w-1/4 xl:w-1/4 "
+      >
         <div className="border m-4">
           <div className="w-full overflow-hidden ">
             <img
@@ -21,7 +23,7 @@ const UserCard = ({ user, id, imageUrl, prefix, name, lastName, title }) => {
             <p className="user-title font-light text-2xl">{title}</p>
           </div>
         </div>
-      </div>
+      </NavLink>
     )
   );
 };

@@ -6,8 +6,8 @@ const RoutesMain = () => {
   const location = useLocation();
   return (
     <Routes location={location} key={location.pathname}>
-      <Route index element={<Home />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route index element={<Home />} exact={true} />
+      <Route path="/profile/:id" element={<Profile />} />
     </Routes>
   );
 };

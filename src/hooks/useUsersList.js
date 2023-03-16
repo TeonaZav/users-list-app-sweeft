@@ -15,12 +15,14 @@ export const useUsersList = ({ baseUrl }) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      setUsersState((prevState) => ({
-        ...prevState,
-        users: [...prevState.users, ...data.list],
-        loading: false,
-        currentPage: data.pagination.current,
-      }));
+      if (data.list) {
+        setUsersState((prevState) => ({
+          ...prevState,
+          users: [...prevState.users, ...data.list],
+          loading: false,
+          currentPage: data.pagination.current,
+        }));
+      }
       console.log(data);
     } catch (error) {
       setUsersState((prevState) => ({ ...prevState, loading: false }));
