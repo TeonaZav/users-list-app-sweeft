@@ -12,7 +12,7 @@ function Home() {
   }, [fetchUsers]);
 
   return (
-    <div className="App">
+    <div className="home bg-[#f6f6f9] py-[2rem]">
       <UserList users={usersState.users} loading={usersState.loading} />
     </div>
   );

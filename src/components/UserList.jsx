@@ -1,5 +1,6 @@
 import UserCard from "./UserCard";
-import loadingImage from "../assets/loading-6.gif";
+import loadingAnimation from "../assets/loop.json";
+import Lottie from "lottie-react";
 
 function UserList({ users, loading }) {
   return (
@@ -11,10 +12,11 @@ function UserList({ users, loading }) {
           {...userItem}
         />
       ))}
+
       {loading ? (
         <div className="loading-img fixed left-1/2 bottom-0 z-30 w-[30rem] translate-x-[-50%]">
           <p className="translate-x-[30%] text-5xl text-white">Loading...</p>
-          <img src={loadingImage} alt="loading icon" />
+          <Lottie animationData={loadingAnimation} />
         </div>
       ) : null}
     </div>

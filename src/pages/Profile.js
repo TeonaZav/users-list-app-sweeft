@@ -33,10 +33,10 @@ function Profile() {
     // }
   }, []);
   return (
-    <div>
+    <div className="flex flex-col items-center border p-[1rem] bg-[#f6f6f9]">
       {user && <ProfileCard user={user} />}
 
-      <p>friends</p>
+      <p className="font-bold text-4xl self-start m-[1rem]">Friends :</p>
       <UserList users={usersState.users} loading={usersState.loading} />
     </div>
   );
