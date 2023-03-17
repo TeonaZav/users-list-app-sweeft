@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/users-list-app-sweeft/static/css/main.faf46827.css",
-    "main.js": "/users-list-app-sweeft/static/js/main.099cf36a.js",
+    "main.js": "/users-list-app-sweeft/static/js/main.b8e3e182.js",
     "static/media/loading-6.gif": "/users-list-app-sweeft/static/media/loading-6.4409bdfa66ae2e237ffe.gif",
     "index.html": "/users-list-app-sweeft/index.html",
     "main.faf46827.css.map": "/users-list-app-sweeft/static/css/main.faf46827.css.map",
-    "main.099cf36a.js.map": "/users-list-app-sweeft/static/js/main.099cf36a.js.map"
+    "main.b8e3e182.js.map": "/users-list-app-sweeft/static/js/main.b8e3e182.js.map"
   },
   "entrypoints": [
     "static/css/main.faf46827.css",
-    "static/js/main.099cf36a.js"
+    "static/js/main.b8e3e182.js"
   ]
 }
