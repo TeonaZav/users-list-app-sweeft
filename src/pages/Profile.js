@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ProfileCard from "../components/ProfileCard";
 import UserList from "../components/UserList";
 import { useUsersList } from "../hooks/useUsersList";
+import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -17,14 +18,19 @@ function Profile() {
     getUser(id);
   }, [fetchUsers]);
   const getUser = useCallback(async (id) => {
-    try {
-      const response = await fetch(`${BASE_URL}/${id}`);
-      const data = await response.json();
-      setUser(data);
-      console.log(data);
-    } catch (error) {
+    const response = await axios(`${BASE_URL}/${id}`).catch((error) => {
       console.log(error);
-    }
+    });
+    console.log(response.data);
+    setUser(response.data);
+    // try {
+    //   const response = await fetch(`${BASE_URL}/${id}`);
+    //   const data = await response.json();
+    //   setUser(data);
+    //   console.log(data);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }, []);
   return (
     <div>

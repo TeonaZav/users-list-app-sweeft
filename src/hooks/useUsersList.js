@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
+import axios from "axios";
 
 export const useUsersList = ({ baseUrl }) => {
   const [usersState, setUsersState] = useState({
@@ -17,12 +18,14 @@ export const useUsersList = ({ baseUrl }) => {
     let url = `${baseUrl}/${usersState.currentPage}/${usersState.pageSize}`;
 
     setUsersState((prevState) => ({ ...prevState, loading: true }));
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data);
-      if (data.list) {
+    const response = await axios(url).catch((error) => {
+      setUsersState((prevState) => ({ ...prevState, loading: false }));
+      console.log(error);
+    });
+    if (response) {
+      if (response.data.list) {
+        let data = response.data;
+        console.log(data);
         setUsersState((prevState) => ({
           ...prevState,
           users: [...prevState.users, ...data.list],
@@ -35,10 +38,28 @@ export const useUsersList = ({ baseUrl }) => {
           loading: false,
         }));
       }
-    } catch (error) {
-      setUsersState((prevState) => ({ ...prevState, loading: false }));
-      console.log(error);
     }
+    // try {
+    //   const response = await fetch(url);
+    //   const data = await response.json();
+    //   console.log(data);
+    //   if (data.list) {
+    //     setUsersState((prevState) => ({
+    //       ...prevState,
+    //       users: [...prevState.users, ...data.list],
+    //       currentPage: data.pagination.current,
+    //       nextPage: data.pagination.nextPage,
+    //     }));
+    //     setNewUsers(false);
+    //     setUsersState((prevState) => ({
+    //       ...prevState,
+    //       loading: false,
+    //     }));
+    //   }
+    // } catch (error) {
+    //   setUsersState((prevState) => ({ ...prevState, loading: false }));
+    //   console.log(error);
+    // }
   }, [usersState.currentPage, usersState.pageSize, baseUrl]);
 
   useEffect(() => {
