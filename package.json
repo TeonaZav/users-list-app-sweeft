@@ -1,5 +1,4 @@
 {
-  "homepage": "https://teonazav.github.io/users-list-app-sweeft",
   "name": "users-list-app-sweeft",
   "version": "0.1.0",
   "private": true,
@@ -18,8 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "netlify dev"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +39,7 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
+    "netlify-cli": "^13.1.6",
     "tailwindcss": "^3.2.7"
   }
 }
