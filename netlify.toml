@@ -1,6 +1,6 @@
 [build]
 functions = "./functions"
 [[redirects]]
-  from = "/api/*"
-  to = "/http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/:splat"
+  from = "/*"
+  to = "/index.html"
   status = 200
