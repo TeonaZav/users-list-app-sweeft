@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/users-list-app-sweeft/static/css/main.e6c13ad2.css",
-    "main.js": "/users-list-app-sweeft/static/js/main.f22b56a6.js",
-    "static/js/787.f0b1b220.chunk.js": "/users-list-app-sweeft/static/js/787.f0b1b220.chunk.js",
+    "main.css": "/users-list-app-sweeft/static/css/main.faf46827.css",
+    "main.js": "/users-list-app-sweeft/static/js/main.3c83a345.js",
+    "static/media/loading-6.gif": "/users-list-app-sweeft/static/media/loading-6.4409bdfa66ae2e237ffe.gif",
     "index.html": "/users-list-app-sweeft/index.html",
-    "main.e6c13ad2.css.map": "/users-list-app-sweeft/static/css/main.e6c13ad2.css.map",
-    "main.f22b56a6.js.map": "/users-list-app-sweeft/static/js/main.f22b56a6.js.map",
-    "787.f0b1b220.chunk.js.map": "/users-list-app-sweeft/static/js/787.f0b1b220.chunk.js.map"
+    "main.faf46827.css.map": "/users-list-app-sweeft/static/css/main.faf46827.css.map",
+    "main.3c83a345.js.map": "/users-list-app-sweeft/static/js/main.3c83a345.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.f22b56a6.js"
+    "static/css/main.faf46827.css",
+    "static/js/main.3c83a345.js"
   ]
 }
