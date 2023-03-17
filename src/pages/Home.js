@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import UserList from "../components/UserList";
 import { useUsersList } from "../hooks/useUsersList";
+
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function Home() {
@@ -12,7 +13,7 @@ function Home() {
 
   return (
     <div className="App">
-      <UserList users={usersState.users} />
+      <UserList users={usersState.users} loading={usersState.loading} />
     </div>
   );
 }

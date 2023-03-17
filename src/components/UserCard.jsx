@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+
 const UserCard = ({ user, id, imageUrl, prefix, name, lastName, title }) => {
   return (
     user && (
@@ -27,4 +28,5 @@ const UserCard = ({ user, id, imageUrl, prefix, name, lastName, title }) => {
     )
   );
 };
+
 export default UserCard;
