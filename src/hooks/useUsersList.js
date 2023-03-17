@@ -6,10 +6,14 @@ export const useUsersList = ({ baseUrl }) => {
     pageSize: 20,
     users: [],
     currentPage: 1,
+    nextPage: 2,
   });
   const mounted = useRef(false);
   const [newUsers, setNewUsers] = useState(false);
+
   const fetchUsers = useCallback(async () => {
+    if (!usersState.nextPage) return;
+
     let url = `${baseUrl}/${usersState.currentPage}/${usersState.pageSize}`;
 
     setUsersState((prevState) => ({ ...prevState, loading: true }));
@@ -17,12 +21,13 @@ export const useUsersList = ({ baseUrl }) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-
+      console.log(data);
       if (data.list) {
         setUsersState((prevState) => ({
           ...prevState,
           users: [...prevState.users, ...data.list],
           currentPage: data.pagination.current,
+          nextPage: data.pagination.nextPage,
         }));
         setNewUsers(false);
         setUsersState((prevState) => ({
@@ -30,7 +35,6 @@ export const useUsersList = ({ baseUrl }) => {
           loading: false,
         }));
       }
-      // console.log(usersState.loading);
     } catch (error) {
       setUsersState((prevState) => ({ ...prevState, loading: false }));
       console.log(error);
@@ -60,5 +64,6 @@ export const useUsersList = ({ baseUrl }) => {
     window.addEventListener("scroll", event);
     return () => window.removeEventListener("scroll", event);
   }, []);
+
   return [usersState, fetchUsers];
 };
