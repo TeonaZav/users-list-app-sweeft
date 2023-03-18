@@ -39,27 +39,6 @@ export const useUsersList = ({ baseUrl }) => {
         }));
       }
     }
-    // try {
-    //   const response = await fetch(url);
-    //   const data = await response.json();
-    //   console.log(data);
-    //   if (data.list) {
-    //     setUsersState((prevState) => ({
-    //       ...prevState,
-    //       users: [...prevState.users, ...data.list],
-    //       currentPage: data.pagination.current,
-    //       nextPage: data.pagination.nextPage,
-    //     }));
-    //     setNewUsers(false);
-    //     setUsersState((prevState) => ({
-    //       ...prevState,
-    //       loading: false,
-    //     }));
-    //   }
-    // } catch (error) {
-    //   setUsersState((prevState) => ({ ...prevState, loading: false }));
-    //   console.log(error);
-    // }
   }, [usersState.currentPage, usersState.pageSize, baseUrl]);
 
   useEffect(() => {

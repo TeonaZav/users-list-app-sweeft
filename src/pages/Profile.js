@@ -5,7 +5,7 @@ import UserList from "../components/UserList";
 import { useUsersList } from "../hooks/useUsersList";
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = `${process.env.REACT_APP_BASE_URL}user`;
 
 function Profile() {
   const [user, setUser] = useState(null);
@@ -23,14 +23,6 @@ function Profile() {
     });
     console.log(response.data);
     setUser(response.data);
-    // try {
-    //   const response = await fetch(`${BASE_URL}/${id}`);
-    //   const data = await response.json();
-    //   setUser(data);
-    //   console.log(data);
-    // } catch (error) {
-    //   console.log(error);
-    // }
   }, []);
   return (
     <div className="flex flex-col items-center border p-[1rem] bg-[#f6f6f9]">
